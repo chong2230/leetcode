@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>165.比较版本号</title>
+    <link rel="stylesheet" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/styles.7a1ced44.css" />
+    <link rel="stylesheet" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-components.301b43df.css" />
+    <link rel="stylesheet" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-modules.c1aab42e.css" />
+    <link rel="stylesheet" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-assets.aa74dd12.css" />
+    <link rel="stylesheet" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-main.807e1579.css" />
+    <link rel="stylesheet" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/main.3761d544.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <div data-key="description-content" class="tab-pane__1SHj css-12hreja-TabContent e16udao5">
+        <div class="description__2b0C">
+            <div data-show-mask="false" class="css-xfm0cl-Container eugt34i0">
+                <h4 data-cypress="QuestionTitle" class="css-10c1h40-Title eugt34i1"><a href="/problems/compare-version-numbers/">165. 比较版本号</a></h4>
+                <div class="css-1e1vffy-Tools e1o5n5iy0"><span data-small-spacing="true" class="css-1p5igso-Difficulty e1o5n5iy1">难度</span><span data-degree="medium" class="css-1p5igso-Difficulty e1o5n5iy1">中等</span><button class="css-nabodd-Button e167268t1"><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1lc17o4-icon"><path fill-rule="evenodd" d="M7 19v-8H4v8h3zM7 9c0-.55.22-1.05.58-1.41L14.17 1l1.06 1.05c.27.27.44.65.44 1.06l-.03.32L14.69 8H21c1.1 0 2 .9 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21H4a2 2 0 01-2-2v-8a2 2 0 012-2h3zm2 0v10h9l3-7v-2h-9l1.34-5.34L9 9z"></path></svg><span>118</span></button>
+                    <button class=" css-11hfr6f-Button e167268t1"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="css-1rhb60f-Svg ea8ky5j0"><path fill-rule="evenodd" d="M15.392 8.23l5.695.832a.942.942 0 01.521 1.607l-4.12 4.013.972 5.67a.942.942 0 01-1.367.993L12 18.667l-5.093 2.678a.942.942 0 01-1.367-.993l.972-5.67-4.12-4.013a.942.942 0 01.52-1.607l5.696-.833 2.547-5.16a.942.942 0 011.69 0l2.547 5.16zm-1.329 1.826L12 5.876l-2.063 4.18-4.615.675 3.34 3.252-.789 4.594L12 16.407l4.127 2.17-.788-4.594 3.34-3.252-4.616-.675z" clip-rule="evenodd"></path></svg></button>
+                    <button class=" css-11hfr6f-Button e167268t1"><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1lc17o4-icon"><path fill-rule="evenodd" d="M17 5V2l5 5h-9a2 2 0 00-2 2v8H9V9a4 4 0 014-4h4zm3 14V9h2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h3v2H4v14h16z"></path></svg></button>
+                    <button class="css-11hfr6f-Button e167268t1"><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1lc17o4-icon"><path fill-rule="evenodd" d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg></button>
+                    <button class="css-11hfr6f-Button e167268t1"><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1lc17o4-icon"><path fill-rule="evenodd" d="M12 22c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2zm6-6l2 2v1H4v-1l2-2v-5c0-3.08 1.64-5.64 4.5-6.32V4c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v.68C16.37 5.36 18 7.93 18 11v5zm-2 1v-6c0-2.48-1.51-4.5-4-4.5S8 8.52 8 11v6h8z"></path></svg></button>
+                    <button class="css-11hfr6f-Button e167268t1"><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1lc17o4-icon"><path fill-rule="evenodd" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17l-.59.59-.58.58V4h16v12zm-9-4h2v2h-2v-2zm0-6h2v4h-2V6z"></path></svg></button>
+                </div>
+            </div>
+            <div class="content__1Y2H">
+                <div class="notranslate" html="<p>比较两个版本号 <em>version1&amp;nbsp;</em>和 <em>version2</em>。<br>
+如果&amp;nbsp;<code><em>version1&amp;nbsp;</em>&amp;gt;&amp;nbsp;<em>version2</em></code>&amp;nbsp;返回&amp;nbsp;<code>1</code>，如果&amp;nbsp;<code><em>version1&amp;nbsp;</em>&amp;lt;&amp;nbsp;<em>version2</em></code> 返回 <code>-1</code>， 除此之外返回 <code>0</code>。</p>
+
+<p>你可以假设版本字符串非空，并且只包含数字和&amp;nbsp;<code>.</code> 字符。</p>
+
+<p>&amp;nbsp;<code>.</code> 字符不代表小数点，而是用于分隔数字序列。</p>
+
+<p>例如，<code>2.5</code> 不是&amp;ldquo;两个半&amp;rdquo;，也不是&amp;ldquo;差一半到三&amp;rdquo;，而是第二版中的第五个小版本。</p>
+
+<p>你可以假设版本号的每一级的默认修订版号为 <code>0</code>。例如，版本号 <code>3.4</code> 的第一级（大版本）和第二级（小版本）修订号分别为 <code>3</code> 和 <code>4</code>。其第三级和第四级修订号均为 <code>0</code>。<br>
+&amp;nbsp;</p>
+
+<p><strong>示例&amp;nbsp;1:</strong></p>
+
+<pre><strong>输入:</strong> <code><em>version1</em></code> = &amp;quot;0.1&amp;quot;, <code><em>version2</em></code> = &amp;quot;1.1&amp;quot;
+<strong>输出:</strong> -1</pre>
+
+<p><strong>示例 2:</strong></p>
+
+<pre><strong>输入: </strong><code><em>version1</em></code> = &amp;quot;1.0.1&amp;quot;, <code><em>version2</em></code> = &amp;quot;1&amp;quot;
+<strong>输出:</strong> 1</pre>
+
+<p><strong>示例 3:</strong></p>
+
+<pre><strong>输入:</strong> <code><em>version1</em></code> = &amp;quot;7.5.2.4&amp;quot;, <code><em>version2</em></code> = &amp;quot;7.5.3&amp;quot;
+<strong>输出:</strong> -1</pre>
+
+<p><strong>示例&amp;nbsp;4：</strong></p>
+
+<pre><code><strong>输入：</strong><em>version1</em></code> = &amp;quot;1.01&amp;quot;, <code><em>version2</em></code> = &amp;quot;1.001&amp;quot;
+<strong>输出：</strong>0
+<strong>解释：</strong>忽略前导零，&amp;ldquo;01&amp;rdquo; 和 &amp;ldquo;001&amp;rdquo; 表示相同的数字 &amp;ldquo;1&amp;rdquo;。</pre>
+
+<p><strong>示例 5：</strong></p>
+
+<pre><code><strong>输入：</strong><em>version1</em></code> = &amp;quot;1.0&amp;quot;, <code><em>version2</em></code> = &amp;quot;1.0.0&amp;quot;
+<strong>输出：</strong>0
+<strong>解释：</strong><code><em>version1 </em></code>没有第三级修订号，这意味着它的第三级修订号默认为 &amp;ldquo;0&amp;rdquo;。</pre>
+
+<p>&amp;nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ol>
+	<li>版本字符串由以点&amp;nbsp;（<code>.</code>）&amp;nbsp;分隔的数字字符串组成。这个数字字符串<strong>可能</strong>有前导零。</li>
+	<li>版本字符串不以点开始或结束，并且其中不会有两个连续的点。</li>
+</ol>
+">
+                    <p>比较两个版本号 <em>version1&nbsp;</em>和 <em>version2</em>。<br> 如果&nbsp;
+                        <code><em>version1&nbsp;</em>&gt;&nbsp;<em>version2</em></code>&nbsp;返回&nbsp;<code>1</code>，如果&nbsp;<code><em>version1&nbsp;</em>&lt;&nbsp;<em>version2</em></code> 返回 <code>-1</code>， 除此之外返回 <code>0</code>。</p>
+
+                    <p>你可以假设版本字符串非空，并且只包含数字和&nbsp;<code>.</code> 字符。</p>
+
+                    <p>&nbsp;<code>.</code> 字符不代表小数点，而是用于分隔数字序列。</p>
+
+                    <p>例如，<code>2.5</code> 不是“两个半”，也不是“差一半到三”，而是第二版中的第五个小版本。</p>
+
+                    <p>你可以假设版本号的每一级的默认修订版号为 <code>0</code>。例如，版本号 <code>3.4</code> 的第一级（大版本）和第二级（小版本）修订号分别为 <code>3</code> 和 <code>4</code>。其第三级和第四级修订号均为 <code>0</code>。<br> &nbsp;
+                    </p>
+
+                    <p><strong>示例&nbsp;1:</strong></p>
+
+                    <pre><strong>输入:</strong> <code><em>version1</em></code> = "0.1", <code><em>version2</em></code> = "1.1"
+<strong>输出:</strong> -1</pre>
+
+                    <p><strong>示例 2:</strong></p>
+
+                    <pre><strong>输入: </strong><code><em>version1</em></code> = "1.0.1", <code><em>version2</em></code> = "1"
+<strong>输出:</strong> 1</pre>
+
+                    <p><strong>示例 3:</strong></p>
+
+                    <pre><strong>输入:</strong> <code><em>version1</em></code> = "7.5.2.4", <code><em>version2</em></code> = "7.5.3"
+<strong>输出:</strong> -1</pre>
+
+                    <p><strong>示例&nbsp;4：</strong></p>
+
+                    <pre><code><strong>输入：</strong><em>version1</em></code> = "1.01", <code><em>version2</em></code> = "1.001"
+<strong>输出：</strong>0
+<strong>解释：</strong>忽略前导零，“01” 和 “001” 表示相同的数字 “1”。</pre>
+
+                    <p><strong>示例 5：</strong></p>
+
+                    <pre><code><strong>输入：</strong><em>version1</em></code> = "1.0", <code><em>version2</em></code> = "1.0.0"
+<strong>输出：</strong>0
+<strong>解释：</strong><code><em>version1 </em></code>没有第三级修订号，这意味着它的第三级修订号默认为 “0”。</pre>
+
+                    <p>&nbsp;</p>
+
+                    <p><strong>提示：</strong></p>
+
+                    <ol>
+                        <li>版本字符串由以点&nbsp;（<code>.</code>）&nbsp;分隔的数字字符串组成。这个数字字符串<strong>可能</strong>有前导零。</li>
+                        <li>版本字符串不以点开始或结束，并且其中不会有两个连续的点。</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="css-dhjq4w-Submission e1oinl1z0"><span class="css-16xftbw-Type e1oinl1z2">通过次数</span><span class="css-1ne6r7t-Count e1oinl1z3">27,398</span>
+                <div class="css-1vr2lla-Separator e1oinl1z1"></div><span class="css-16xftbw-Type e1oinl1z2">提交次数</span><span class="css-1ne6r7t-Count e1oinl1z3">62,841</span></div>
+            <div class="header__2ao3">
+                <div class="css-rrr7do enw8myh0">在真实的面试中遇到过这道题？</div>
+                <div class="btn-wrapper__PZW-"><button class="css-9bi2u7-BaseButtonComponent ery7n2v0"><span>是</span></button></div>
+                <div class="btn-wrapper__PZW-"><button class="css-9bi2u7-BaseButtonComponent ery7n2v0"><span>否</span></button></div>
+            </div>
+            <div class="container__35eI">
+                <div class="label__1TJ4">贡献者</div>
+                <div class="contributors__1Ef7">
+                    <div>
+                        <a id="0" target="_blank"><img class="avatar__3dBl" src="https://static.leetcode-cn.com/cn-legacy-assets/images/LeetCode_avatar.png" alt="LeetCode"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="css-5nit4e">
+                <div class="css-a8m6w7-baseHeaderStyle elxju5k0">
+                    <div class="css-1jqueqk">
+                        <div class="header__1If0"><span>相关企业<svg viewBox="0 0 24 24" width="1em" height="1em" class="info-icon__3L3i css-1lc17o4-icon"><path fill-rule="evenodd" d="M13.91 3.5c.436.031.795.187 1.075.468.28.28.421.63.421 1.052 0 .42-.14.771-.42 1.052-.281.28-.64.42-1.076.42-.437 0-.795-.14-1.076-.42-.28-.28-.42-.631-.42-1.052 0-.421.14-.772.42-1.052.28-.281.64-.437 1.076-.468zm-.374 4.77c.56 0 .85.233.865.7.015.468-.024.874-.117 1.217l-1.17 4.395c-.404 1.465-.576 2.385-.514 2.759.125.25.398.25.819 0 .42-.25.818-.5 1.192-.748l.047-.047c.062 0 .125.03.187.093l.187.328c.031.062 0 .124-.094.187L12.6 18.79c-.405.28-.966.507-1.683.678-.717.172-1.029-.35-.935-1.566.561-2.681 1.036-4.684 1.426-6.009.39-1.325.101-1.675-.865-1.052l-1.075.702c-.094.062-.156.085-.187.07-.032-.016-.078-.102-.14-.257L9 11.122c0-.031.047-.094.14-.187.094-.094.678-.522 1.754-1.286 1.075-.764 1.956-1.224 2.642-1.38z"></path></svg></span>
+                            <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="lock-icon__26Ue css-3v6l1g-Svg ea8ky5j0">
+                                <path fill-rule="evenodd" d="M7 8v2H6a3 3 0 00-3 3v6a3 3 0 003 3h12a3 3 0 003-3v-6a3 3 0 00-3-3h-1V8A5 5 0 007 8zm8 0v2H9V8a3 3 0 116 0zm-3 6a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"></path>
+                                </svg>
+                        </div>
+                    </div><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1fdhzq0-icon"><path fill-rule="evenodd" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></div>
+                <div class="css-1hky5w4"></div>
+            </div>
+            <div class="css-5nit4e">
+                <div class="css-a8m6w7-baseHeaderStyle elxju5k0">
+                    <div class="css-1jqueqk">
+                        <div class="header__22S7">相关标签</div>
+                    </div><svg viewBox="0 0 24 24" width="1em" height="1em" class="css-1fdhzq0-icon"><path fill-rule="evenodd" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></div>
+                <div class="css-1hky5w4">
+                    <div class="topic-tags__1S89"><a href="/tag/string/" class="topic-tag__1z4- css-15ki55d-BasicTag e4dtce60"><span>字符串</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /**
+         * @param {string} version1
+         * @param {string} version2
+         * @return {number}
+         */
+        var compareVersion = function(version1, version2) {
+            var arr1 = version1.split('.');
+            var arr2 = version2.split('.');
+            var len = arr1.length <= arr2.length ? arr1.length : arr2.length;
+            for (var i = 0; i < len; i++) {
+                if (parseInt(arr1[i]) > parseInt(arr2[i])) return 1;
+                else if (parseInt(arr1[i]) < parseInt(arr2[i])) return -1;
+                else continue;
+            }
+            if (i == len && arr1.length != arr2.length) {
+                if (arr1.length > arr2.length) {
+                    for (var j = len; j < arr1.length; j++) {
+                        if (parseInt(arr1[j]) > 0) return 1;
+                    }
+                    if (j == arr1.length) return 0;
+                } else {
+                    for (var j = len; j < arr2.length; j++) {
+                        if (parseInt(arr2[j]) > 0) return -1;
+                    }
+                    if (j == arr1.length) return 0;
+                }
+            }
+            return 0;
+        };
+
+        // 另一个解法
+        var compareVersion = function(version1, version2) {
+            var v1 = "" + version1;
+            var v2 = "" + version2;
+            var ver1 = v1.split('.');
+            var ver2 = v2.split('.');
+            var l = ver1.length > ver2.length ? ver1.length : ver2.length;
+            for (var i = 0; i < l; i++) {
+                var num1 = ver1[i] || 0;
+                var num2 = ver2[i] || 0;
+                if (parseFloat(num1) > parseFloat(num2)) {
+                    return 1;
+                } else if (parseFloat(num1) < parseFloat(num2)) {
+                    return -1;
+                }
+            }
+            return 0;
+        };
+
+        console.log(compareVersion("1.0.1", "1"));
+        console.log(compareVersion("7.5.2.4", "7.5.3"));
+        console.log(compareVersion("1.01", "1.001"));
+        console.log(compareVersion("1.0", "1.0.0"));
+    </script>
+</body>
+
+</html>

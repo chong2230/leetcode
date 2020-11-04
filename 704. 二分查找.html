@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 二分查找
+         * @param {number[]} nums
+         * @param {number} target
+         * @return {number}
+         */
+        var search = function(nums, target) {
+            return binarySearch(nums, target, 0, nums.length - 1);
+        };
+
+        function binarySearch(nums, target, left, right) {
+            if (left > right) return -1;
+            var index = parseInt((left + right) / 2);
+            if (target === nums[index]) return index;
+            else if (target < nums[index]) return binarySearch(nums, target, left, index - 1);
+            else return binarySearch(nums, target, index + 1, right);
+        }
+
+        // 解法2
+        var search = function(nums, target) {
+            var left = 0,
+                right = nums.length - 1;
+            while (left <= right) {
+                var index = parseInt((left + right) / 2);
+                if (target === nums[index]) return index;
+                else if (target < nums[index]) right = index - 1;
+                else left = index + 1;
+            }
+            return -1;
+        }
+
+        // [1,3,5,7,9]     len: 5   index: 2    [1,3]  
+        // [1,3,5,7,9,20]  len: 6   index: 2
+        search([1, 3, 5, 7, 9], 2);
+    </script>
+</body>
+
+</html>
