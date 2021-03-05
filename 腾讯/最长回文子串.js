@@ -47,7 +47,8 @@ function isHuiwen(s) {
 
 var longestPalindrome = function(s) {
     let len = s.length;
-    let result;
+    let result = '';
+    let tmp = '';
     let i,j,L;
     let dp=Array(len).fill(0).map(x=>Array(len).fill(0));
     //console.log(dp);
@@ -69,10 +70,12 @@ var longestPalindrome = function(s) {
                 j = i + L - 1;
             if(L == 2 && s[i] == s[j]) {
                 dp[i][j] = 1;
-                result = s.slice(i, i + L);
+                tmp = s.slice(i, i + L);
+                if (tmp.length > result.length) result = tmp;
             }else if(s[i] == s[j] && dp[i + 1][j - 1] == 1) {
                 dp[i][j] = 1
-                result = s.slice(i, i + L);
+                tmp = s.slice(i, i + L);
+                if (tmp.length > result.length) result = tmp;
             }
 
         }
